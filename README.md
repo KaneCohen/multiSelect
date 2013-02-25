@@ -2,6 +2,8 @@
 
 ## Simple jQuery plugin allowing selection/unselection of items
 
+DEMO: <http://jsfiddle.net/UvJLd/>
+
 -----
 
 ## Usage
