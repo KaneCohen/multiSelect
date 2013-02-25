@@ -12,6 +12,9 @@ DEMO: <http://jsfiddle.net/UvJLd/>
 $('ul').multiSelect();
 ````
 
+* Hold `CTRL` to select one by one multiple items
+* Hold `SHIFT` to select multiple elements at once
+
 -----
 
 ## Options
