@@ -48,3 +48,11 @@ $('ul').multiSelect().on('select', function(e, obj) {
 	// callback fired after selection/unselection of the item	
 });
 ````
+
+----
+
+## Destruction
+
+````javascript
+$('ul').multiSelect('destroy');
+````

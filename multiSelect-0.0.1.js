@@ -2,6 +2,11 @@
 	$.fn.multiSelect = function(options) {
 		var o = $.extend(true, {}, options);
 		return this.each(function(k,v) {
+			var ms = $(this).data('multiSelect');
+			if (ms) {
+				ms.trigger(options);
+				return false;
+			}
 			o.element = $(this);
 			new MultiSelect(o);
 		});
@@ -108,10 +113,10 @@
 			this.trigger('stop', o.element.find('.'+o.selected), o.element);
 		},
 		destroy: function() {
-			this.o.element.data('multiSelect', null);
-			this.o.element.off('.multiselect');
+			this.o.element.removeData('multiSelect');
+			this.o.element.off('.multiSelect');
 			if (this.o.unselectOn) {
-				$(this.o.unselectOn).off('.multiselect');
+				$(this.o.unselectOn).off('.multiSelect');
 			}
 		},
 		trigger: function(name) {
