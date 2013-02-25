@@ -1,3 +1,6 @@
+// Simple jQuery plugin for selection of items in a list of items
+// version 0.0.1
+// Kane Cohen [KaneCohen@gmail.com] | https://github.com/KaneCohen
 (function($) {
 	$.fn.multiSelect = function(options) {
 		var o = $.extend(true, {}, options);
