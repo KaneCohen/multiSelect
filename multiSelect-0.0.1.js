@@ -8,7 +8,7 @@
 			var ms = $(this).data('multiSelect');
 			if (ms) {
 				ms.trigger(options);
-				return false;
+				return;
 			}
 			o.element = $(this);
 			new MultiSelect(o);
@@ -57,7 +57,7 @@
 			});
 			if (this.o.unselectOn) {
 				$(this.o.unselectOn).on('mousedown.multiSelect', function(e) {
-					if ( ! $(e.target).parents().is(self.o.element) && e.which != 3) {
+					if (! $(e.target).parents().is(self.o.element) && e.which != 3) {
 						if (self.o.trigger('unselect', e, self) === false) {
 							return false;
 						}
@@ -69,9 +69,9 @@
 		},
 		selectItems: function(e) {
 			var o = this.o,
-					target = e.target,
-					item   = $(e.currentTarget),
-					list   = this.o.element, first, last;
+			    target = e.target,
+			    item   = $(e.currentTarget),
+			    list   = this.o.element, first, last;
 
 			if (list.hasClass('ui-sortable-helper')) {
 				return false;
@@ -104,7 +104,7 @@
 			} else {
 				// do not remove selection on second click on already selected item
 				if (o.keepSelection) {
-					if ( ! item.hasClass(o.selected) ) {
+					if (! item.hasClass(o.selected) ) {
 						list.find('.'+o.selected).removeClass(o.selected);
 						item.addClass(o.selected);
 					}
